@@ -5,11 +5,11 @@ console.log('Here is : ', 'array')
 /*
 1
 Correct the syntax error
- [ 1,7  9  45, ]
+ [ 1,7,9,45]
 
- ["Str" "alex","moh"
+ ["Str","alex","moh"]
 
- 'the','fox' 'over' lazy, 'dog',  ]
+ ['the','fox','over','lazy','dog']
 
 */
 
@@ -18,7 +18,7 @@ Correct the syntax error
 2
 What the index of "Banana","Tomato"
 var fruits=["Tomato","Banana","Watermelon"]
-
+Banana = 1 Tomato = 0
 */
 
 
@@ -29,7 +29,9 @@ Create an array represents your:
 2- Favorite Sport (3)
 3- Favorite Movie (4)
 */
-
+var food= ["mansaf","maqloba","Fasolia", "Zarb", "Mlo5yeh"]
+var sport=["football","tennis","basketball"]
+var Movie=["warrior", "88 minutes","john wick", "green miles"]
 
 /*
 4
@@ -40,18 +42,22 @@ and return the first element in an array
 Ex: firstOfArray([1,4,5]) => 1
 Ex: firstOfArray(["t","u","g","x"]) => "t"
 */
-
+function firstOfArray(x){
+console.log(x[0]);
+}
 
 /*
 5
 Create a function called lastOfArray
 that take an array as a parameter
-and return the first element in an array
+and return the last element in an array
 
 Ex: lastOfArray([1,4,5]) => 5
 Ex: lastOfArray(["t","u","g","x"]) => "x"
 */
-
+function lastOfArray(x){
+console.log(x[x.length -1]);
+}
 
 /*
 6
@@ -60,7 +66,12 @@ Using console make this array to be like this one (push, unshift, shift, pop)
 var array = [0,5,7,9]
 => [1,3,4,6,8,9,10]
 */
-
+var array = [0,5,7,9]
+array.shift()
+array.shift()
+array.shift()
+array.unshift(1,3,4,6,8)
+array.push (10)
 
 /*
 7
@@ -68,7 +79,7 @@ Using the console try to figure out what the thing thats (push, unshift, shift, 
 
 var array2 = [5,9,-7,3.5]
 */
-
+//Done
 
 /*
 8
@@ -80,7 +91,12 @@ and return the two middle elemnt in an array if it is have an even elemnets
 Ex: middleOfArray([1,4,5]) => 4
 Ex: middleOfArray(["t","u","g","x"]) =>"u and g"
 */
-
+function middleOfArray (x){
+    if (x.length%2 !== 0) {
+        return x[(x.length-1)/2]
+    } else
+    return x[(x.length/2)-1] + ' and ' + x[x.length/2];
+}
 
 /*
 9
@@ -94,6 +110,11 @@ animals; => ['zebra', 'elephant']
 var nums= [1,2,3,8,9]
 nums => [5,-22,3.5,44,98,44]
 */
+var animals = ['cat', 'ele', 'bird'];
+animals[0] = 'zebra';
+animals[1] = 'elephant';
+animals[2] = undefined;
+// animals = ['zebra', 'elephant'];
 
 
 /*
@@ -110,6 +131,12 @@ Ex: indexOfArray(nums,4) => 9
 **try more cases by your self
 */
 
+var nums = [1,2,3,4,5,6,7]
+function indexOfArray(array,index){
+
+    return array[index];
+
+}
 
 /*
 11
@@ -122,7 +149,13 @@ Ex: arrayExceptLast(nums) =>  [1,2,3,8]
 
 **try more cases by your self
 */
+function arrayExceptLast(array){
 
+    // return  array.splice(0,array.length-1)
+    array.pop();
+    return array;
+
+}
 
 /*
 12
@@ -135,6 +168,13 @@ Ex: addToEnd(nums,55) =>  [1,2,3,8,55]
 
 **try more cases by your self
 */
+
+var moh = [1,2,3,3,4]
+
+function addToEnd(array, value) {
+    array.push(value);
+    return array;
+}
 
 
 // all the exercises below should solved 2 times: 1- for loop 2- while lopp
@@ -150,7 +190,24 @@ Ex: sumArray(nums) => 23
 ** solve it one time using for loop and another using while loop
 **try more cases by your self
 */
+function sumArray(array){
+    var sum = 0
+    var x = array.length
+    for (var i=0;  i < x ; i++){
+    sum= sum + array[i];
+    }
+    return sum;
+}
 
+function sumArray1(array){
+    var x = array.length
+    var sum = 0
+    while (x>0){
+        sum = sum+array[x-1]
+        x--
+    }
+    return sum;
+}
 
 /*
 14
